@@ -1,4 +1,6 @@
-package com.example.ifuture.service;
+package com.example.ifuture.server.service.account;
+
+import com.example.ifuture.server.utils.response.ServiceResponse;
 
 public interface AccountService {
     /**
@@ -6,7 +8,7 @@ public interface AccountService {
      *
      * @param id balance identifier
      */
-    Long getAmount(Integer id);
+    ServiceResponse<Long> getAmount(Integer id);
 
     /**
      * Increases balance or set if addAmount() method was called first time
@@ -14,5 +16,5 @@ public interface AccountService {
      * @param id balance identifier
      * @param value positive or negative value, which must be added to current balance
      */
-    void addAmount(Integer id, Long value);
+    ServiceResponse<Long> addAmount(Integer id, Long value);
 }
