@@ -34,6 +34,9 @@ public class StatisticService {
         reportGetAmountPerSecond = writerCount;
         writerCount = 0;
         readerCount = 0;
+    }
+
+    public static void startBigDataStatistic() {
         client.start();
     }
 

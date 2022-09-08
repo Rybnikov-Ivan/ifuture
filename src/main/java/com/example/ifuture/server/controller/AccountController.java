@@ -32,6 +32,11 @@ public class AccountController {
         StatisticService.start();
     }
 
+    @GetMapping("/startHigh")
+    public void startStatisticWithBigData() {
+        StatisticService.startBigDataStatistic();
+    }
+
     @GetMapping("/reset")
     public void resetStatistic() {
         StatisticService.reset();
