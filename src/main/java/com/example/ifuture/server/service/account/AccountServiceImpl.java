@@ -2,7 +2,6 @@ package com.example.ifuture.server.service.account;
 
 import com.example.ifuture.server.model.Account;
 import com.example.ifuture.server.repository.AccountRepository;
-import com.example.ifuture.server.service.account.AccountService;
 import com.example.ifuture.server.utils.response.MessageServiceResponse;
 import com.example.ifuture.server.utils.response.ServiceResponse;
 import org.springframework.beans.factory.annotation.Autowired;

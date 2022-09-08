@@ -1,6 +1,5 @@
 package com.example.ifuture.server.utils.response;
 
-import com.example.ifuture.server.utils.response.MessageServiceResponse;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.http.HttpStatus;
