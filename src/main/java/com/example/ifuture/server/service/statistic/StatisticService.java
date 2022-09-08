@@ -10,9 +10,8 @@ import java.util.logging.Logger;
 @Service
 public class StatisticService {
 
-    private static Logger LOGGER = Logger.getLogger(StatisticService.class.getName());
+    private static final Logger LOGGER = Logger.getLogger(StatisticService.class.getName());
 
-    @Autowired
     private static Client client;
 
     private static int writerCount = 0;
@@ -23,6 +22,11 @@ public class StatisticService {
 
     private static int reportGetAmountPerSecond = 0;
     private static int reportAddAmountPerSecond = 0;
+
+    @Autowired
+    public StatisticService(Client client) {
+        StatisticService.client = client;
+    }
 
     @Scheduled(fixedDelay = 1000)
     public static void start() {
@@ -50,10 +54,13 @@ public class StatisticService {
 
     @Scheduled(fixedDelay = 10000)
     public static void report() {
-        LOGGER.info("total number of method calls 'add amount': " + totalNumberAddAmount + "\n" +
+        LOGGER.info(
+                "\n" + "---------------------------------------------------------" + "\n" +
+                "total number of method calls 'add amount': " + totalNumberAddAmount + "\n" +
                 "number of method calls 'add amount' per second: " + reportAddAmountPerSecond + "\n" +
                 "total number of method calls 'get amount': " + totalNumberGetAmount + "\n" +
-                "number of method calls 'get amount' per second: " + reportGetAmountPerSecond
+                "number of method calls 'get amount' per second: " + reportGetAmountPerSecond +
+                "---------------------------------------------------------" + "\n"
                 );
     }
 }
